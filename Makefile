@@ -6,8 +6,8 @@ WINLIBS	 := -lole32 -loleaut32 -luuid -lpropsys -ldinput8 -ldxguid -ldxerr8 -lus
 
 BUILD ?= normal
 
-TARGET   := imgtobin
-SRCS     := imgtobin.c
+TARGET   := imgtohex
+SRCS     := imgtohex.c
 OBJS     := $(SRCS:.c=.o)
 
 ifeq ($(OS),Windows_NT)
@@ -47,4 +47,5 @@ $(RES): $(RC_SRC)
 	$(RC) $< -O coff -o $@
 
 clean:
+
 	-$(RM) $(OBJS) $(RES) 2>$(NULL) || true
